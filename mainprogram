@@ -1,0 +1,33 @@
+#include <iostream>
+#include "binarySearchTree.h"
+
+using namespace std;
+ 
+int main()
+{
+	bSearchTreeType<int>  treeRoot;
+	
+	int num;
+
+	cout << "Enter integers ending with -999" << endl;
+	cin >> num;
+
+	while (num != -999)
+	{
+		treeRoot.insert(num);
+		cin >> num;
+	}
+
+	cout << endl << "Tree nodes in inorder: ";
+	treeRoot.inorderTraversal();
+	cout << endl;
+
+	cout << "Tree Height: " << treeRoot.treeHeight()
+		 << endl;
+	cout << "Number of single Parents: "
+		 << treeRoot.singleParent() << endl;
+
+	cout << endl;
+
+	return 0;
+}
